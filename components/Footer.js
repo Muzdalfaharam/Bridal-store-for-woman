@@ -38,7 +38,7 @@ export default function Footer() {
           >
             <h3 className="font-serif text-3xl font-bold text-white">
               <span className="text-rose-400">Bridal</span>
-              <span className="text-gold-400">Store</span>
+              <span className="text-amber-400">Store</span> {/* gold-400 ko amber-400 kar diya taake crash na ho */}
             </h3>
             <p className="text-sm text-gray-400 max-w-xs leading-relaxed">
               Timeless luxury for your special day. Handcrafted bridal ensembles,
