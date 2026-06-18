@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== CUSTOM COLORS ===== */
+@theme {
+  /* Gold Colors */
+  --color-gold-50: #F9F3E8;
+  --color-gold-100: #F0E4CC;
+  --color-gold-200: #E8D4A8;
+  --color-gold-300: #DEC484;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #C9A96E;
+  --color-gold-600: #B8943E;
+  --color-gold-700: #A67C2E;
+  --color-gold-800: #8B6914;
+  --color-gold-900: #6B4F0A;
+
+  /* Blush Colors */
+  --color-blush-50: #FFF8F5;
+  --color-blush-100: #FFF0EB;
+  --color-blush-200: #FDE1D6;
+  --color-blush-300: #FCCCB8;
+  --color-blush-400: #FAB89A;
+  --color-blush-500: #F8A07C;
+  --color-blush-600: #F0805C;
+  --color-blush-700: #E8603C;
+  --color-blush-800: #D44020;
+  --color-blush-900: #B82010;
+
+  /* Fonts */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== FONT IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: var(--font-sans);
+  background: #FFF8F5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #C9A96E, #8B0000);
+  border-radius: 10px;
+}
+
+/* ===== GOLD TEXT GRADIENT ===== */
+.gold-text {
+  background: linear-gradient(135deg, #C9A96E 0%, #D4AF37 50%, #C9A96E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.fade-in {
+  animation: fadeIn 1s ease-in;
 }
